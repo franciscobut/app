@@ -29,3 +29,25 @@ async function registrarUsuario(){
 
 
 }
+
+async function registrarProducto(){
+    let datos={};
+    datos.nombre=document.getElementById('txtNombre').value;
+    datos.existencia=document.getElementById('txtExistencia').value;
+    datos.descripcion=document.getElementById('txtDescripcion').value;
+    datos.marca=document.getElementById('txtMarca').value;
+    datos.precio=document.getElementById('txtPrecio').value;
+
+
+    const request= await fetch('api/productos', {
+    method: 'POST',
+    headers:{
+        'Accept':'application/json',
+        'Content-Type':'application/json'
+    },
+    body: JSON.stringify(datos)
+    });
+    location.reload();
+
+
+}

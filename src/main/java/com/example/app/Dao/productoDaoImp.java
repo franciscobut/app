@@ -24,4 +24,9 @@ public class productoDaoImp implements  productoDao{
 
 
     }
+
+    @Override
+    public void registrar(Producto producto) {
+        entityManager.merge(producto);
+    }
 }
